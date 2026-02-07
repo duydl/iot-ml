@@ -14,6 +14,11 @@ USEMODULE += ztimer_msec
 USEMODULE += nimble_svc_gap
 USEMODULE += nimble_svc_gatt
 
+# Allow multiple simultaneous BLE connections
+RX_MAX_CONN ?= 4
+CFLAGS += -DMYNEWT_VAL_BLE_MAX_CONNECTIONS=$(RX_MAX_CONN)
+CFLAGS += -DRX_MAX_CONN=$(RX_MAX_CONN)
+
 # Comment this out to disable code in RIOT that does safety checking
 # which is not needed in a production environment but helps in the
 # development process:
