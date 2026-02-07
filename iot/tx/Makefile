@@ -5,7 +5,7 @@ APPLICATION = iot_tx
 BOARD ?= adafruit-feather-nrf52840-sense
 PROGRAMMER = adafruit-nrfutil
 # This has to be the absolute path to the RIOT base directory:
-RIOTBASE ?= $(CURDIR)/../../../RIOT
+RIOTBASE ?= $(CURDIR)/../../RIOT
 
 # Some RIOT modules needed for this example
 USEMODULE += ztimer_msec
