@@ -316,12 +316,15 @@ static int gap_event(struct ble_gap_event *event, void *arg)
             slot = find_slot_by_handle(event->notify_rx.conn_handle);
         }
         const char *dev_name = slot ? slot->name : "unknown";
-        printf("%s,%u,%d,%d,%d,%d,%d,%d\n",
+
+        int8_t rssi = 127;  // 127 often used as "unknown/unavailable"
+        ble_gap_conn_rssi(event->notify_rx.conn_handle, &rssi); 
+        printf("%s,%u,%d,%d,%d,%d,%d,%d,%d\n",
                dev_name,
                sample.seq,
                sample.temp_val, sample.temp_scale,
                sample.hum_val, sample.hum_scale,
-               sample.press_val, sample.press_scale);
+               sample.press_val, sample.press_scale, rssi);
 
         return 0;
     }
