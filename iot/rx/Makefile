@@ -8,7 +8,7 @@ PROGRAMMER = adafruit-nrfutil
 RIOTBASE ?= $(CURDIR)/../../../RIOT
 
 # Some RIOT modules needed for this example
-USEMODULE += ztimer_sec
+USEMODULE += ztimer_msec
 
 # Include NimBLE
 USEMODULE += nimble_svc_gap
