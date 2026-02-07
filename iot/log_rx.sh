@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 PORT="${1:-${PORT:-/dev/ttyACM0}}"
 BAUD="${BAUD:-115200}"
 
 TS="$(date +%Y%m%d_%H%M%S)"
-OUTDIR="$ROOT/_Project/data/$TS"
+OUTDIR="$ROOT/data/$TS"
 OUTFILE="$OUTDIR/rx.csv"
 
 mkdir -p "$OUTDIR"
@@ -17,7 +17,7 @@ echo "# Logging RX to $OUTFILE"
 
 echo "# PORT=$PORT BAUD=$BAUD"
 
-PORT="$PORT" BAUD="$BAUD" make -C "$ROOT/_Project/iot/rx" term \
+PORT="$PORT" BAUD="$BAUD" make -C "$ROOT/iot/rx" term \
   | awk '
     {
       line = $0;
