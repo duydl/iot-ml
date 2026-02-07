@@ -19,6 +19,12 @@
 #define CUSTOM_CHR_UUID     0xee00
 #define DEVICE_NAME_PREFIX  "RIOT-BLE-"
 #define DEVICE_NAME_MAX_LEN 31
+#ifndef RX_DEBUG
+#define RX_DEBUG            1
+#endif
+#ifndef RX_DEBUG_SCAN
+#define RX_DEBUG_SCAN       1
+#endif
 #ifndef RX_MAX_CONN
 #define MAX_CONN            4
 #else
@@ -59,6 +65,28 @@ static uint8_t g_scanning;
 
 static void start_scan(void);
 
+#if RX_DEBUG
+#define RX_LOG(...) printf(__VA_ARGS__)
+#else
+#define RX_LOG(...) do {} while (0)
+#endif
+
+#if RX_DEBUG_SCAN
+#define RX_SCAN_LOG(...) printf(__VA_ARGS__)
+#else
+#define RX_SCAN_LOG(...) do {} while (0)
+#endif
+
+static void addr_to_str(const ble_addr_t *addr, char *out, size_t out_len)
+{
+    if (!addr || out_len == 0) {
+        return;
+    }
+    snprintf(out, out_len, "%02x:%02x:%02x:%02x:%02x:%02x",
+             addr->val[5], addr->val[4], addr->val[3],
+             addr->val[2], addr->val[1], addr->val[0]);
+}
+
 static int discover_chr_cb(uint16_t conn_handle, const struct ble_gatt_error *error,
                            const struct ble_gatt_chr *chr, void *arg)
 {
@@ -66,6 +94,8 @@ static int discover_chr_cb(uint16_t conn_handle, const struct ble_gatt_error *er
     (void)error;
 
     if (chr == NULL) {
+        RX_LOG("# RX: chr discovery complete (dev=%s)\n",
+               slot ? slot->name : "unknown");
         return 0;
     }
 
@@ -77,12 +107,12 @@ static int discover_chr_cb(uint16_t conn_handle, const struct ble_gatt_error *er
         slot->chr_ccc_handle = chr->val_handle + 1;
 
         uint16_t ccc_value = 0x0001;
-        printf("# RX: enable notify (ccc=%u, dev=%s)\n",
+        RX_LOG("# RX: enable notify (ccc=%u, dev=%s)\n",
                slot->chr_ccc_handle, slot->name);
         int rc = ble_gattc_write_flat(conn_handle, slot->chr_ccc_handle,
                                       &ccc_value, sizeof(ccc_value), NULL, NULL);
         if (rc != 0) {
-            printf("# RX: CCC write failed rc=%d\n", rc);
+            RX_LOG("# RX: CCC write failed rc=%d\n", rc);
         }
     }
 
@@ -96,9 +126,14 @@ static int discover_svc_cb(uint16_t conn_handle, const struct ble_gatt_error *er
     (void)error;
 
     if (service == NULL) {
+        RX_LOG("# RX: svc discovery complete (dev=%s)\n",
+               slot ? slot->name : "unknown");
         return 0;
     }
 
+    RX_LOG("# RX: svc found (start=%u end=%u dev=%s)\n",
+           service->start_handle, service->end_handle,
+           slot ? slot->name : "unknown");
     ble_gattc_disc_all_chrs(conn_handle,
                             service->start_handle,
                             service->end_handle,
@@ -222,8 +257,16 @@ static int gap_event(struct ble_gap_event *event, void *arg)
 
     switch (event->type) {
     case BLE_GAP_EVENT_CONNECT: {
+        char addr_str[18] = {0};
+        if (slot) {
+            addr_to_str(&slot->addr, addr_str, sizeof(addr_str));
+        } else {
+            strncpy(addr_str, "<unknown>", sizeof(addr_str));
+            addr_str[sizeof(addr_str) - 1] = '\0';
+        }
         if (event->connect.status != 0) {
-            printf("# RX: connect failed status=%d\n", event->connect.status);
+            RX_LOG("# RX: connect failed status=%d addr=%s\n",
+                   event->connect.status, addr_str);
             if (slot) {
                 clear_slot(slot);
             }
@@ -233,15 +276,15 @@ static int gap_event(struct ble_gap_event *event, void *arg)
         if (slot) {
             slot->state = CONN_CONNECTED;
             slot->conn_handle = event->connect.conn_handle;
-            printf("# RX: connected handle=%u dev=%s\n",
-                   slot->conn_handle, slot->name);
+            RX_LOG("# RX: connected handle=%u dev=%s addr=%s\n",
+                   slot->conn_handle, slot->name, addr_str);
         }
 
         int rc = ble_gattc_disc_svc_by_uuid(event->connect.conn_handle,
                                             &g_svc_uuid.u, discover_svc_cb,
                                             slot);
         if (rc != 0) {
-            printf("# RX: service discovery failed\n");
+            RX_LOG("# RX: service discovery failed rc=%d\n", rc);
             ble_gap_terminate(event->connect.conn_handle,
                               BLE_ERR_REM_USER_CONN_TERM);
         }
@@ -250,7 +293,7 @@ static int gap_event(struct ble_gap_event *event, void *arg)
     }
 
     case BLE_GAP_EVENT_DISCONNECT:
-        printf("# RX: disconnected reason=%d\n", event->disconnect.reason);
+        RX_LOG("# RX: disconnected reason=%d\n", event->disconnect.reason);
         if (slot) {
             clear_slot(slot);
         } else {
@@ -261,7 +304,7 @@ static int gap_event(struct ble_gap_event *event, void *arg)
 
     case BLE_GAP_EVENT_NOTIFY_RX: {
         if (event->notify_rx.om->om_len < sizeof(sample_t)) {
-            printf("# RX: short notify len=%u\n",
+            RX_LOG("# RX: short notify len=%u\n",
                    (unsigned)event->notify_rx.om->om_len);
             return 0;
         }
@@ -297,11 +340,19 @@ static int scan_event(struct ble_gap_event *event, void *arg)
     switch (event->type) {
     case BLE_GAP_EVENT_DISC_COMPLETE:
         g_scanning = 0;
+        RX_LOG("# RX: scan complete\n");
         start_scan();
         return 0;
 
     case BLE_GAP_EVENT_DISC:
-        ble_hs_adv_parse_fields(&fields, event->disc.data, event->disc.length_data);
+        {
+            int rc = ble_hs_adv_parse_fields(&fields, event->disc.data,
+                                             event->disc.length_data);
+            if (rc != 0) {
+                RX_SCAN_LOG("# RX: adv parse failed rc=%d\n", rc);
+                return 0;
+            }
+        }
 
         int uuid_match = 0;
         if (fields.uuids16 != NULL && fields.num_uuids16 > 0) {
@@ -314,32 +365,57 @@ static int scan_event(struct ble_gap_event *event, void *arg)
         }
 
         int name_match = 0;
+        char name_buf[DEVICE_NAME_MAX_LEN + 1];
+        name_buf[0] = '\0';
         if (fields.name != NULL && fields.name_len > 0) {
             if (name_matches(fields.name, fields.name_len)) {
                 name_match = 1;
             }
+            uint8_t copy_len = fields.name_len;
+            if (copy_len > DEVICE_NAME_MAX_LEN) {
+                copy_len = DEVICE_NAME_MAX_LEN;
+            }
+            memcpy(name_buf, fields.name, copy_len);
+            name_buf[copy_len] = '\0';
+        } else {
+            strncpy(name_buf, "<none>", sizeof(name_buf));
+            name_buf[sizeof(name_buf) - 1] = '\0';
+        }
+
+        if (uuid_match || (fields.name && fields.name_len > 0)) {
+            char addr_str[18] = {0};
+            addr_to_str(&event->disc.addr, addr_str, sizeof(addr_str));
+            RX_SCAN_LOG("# RX: adv addr=%s rssi=%d name=%s uuid=%d name_match=%d\n",
+                        addr_str, event->disc.rssi, name_buf,
+                        uuid_match, name_match);
         }
 
         if (uuid_match && name_match) {
             if (active_conn_count() >= MAX_CONN) {
+                RX_LOG("# RX: skip %s (max conn reached)\n", name_buf);
                 return 0;
             }
             if (find_slot_by_addr(&event->disc.addr)) {
+                RX_LOG("# RX: skip %s (already tracked)\n", name_buf);
                 return 0;
             }
             conn_slot_t *slot = alloc_slot(&event->disc.addr,
                                            fields.name,
                                            fields.name_len);
             if (!slot) {
+                RX_LOG("# RX: no free slot for %s\n", name_buf);
                 return 0;
             }
-            printf("# RX: found %s, connecting...\n", slot->name);
-            ble_gap_disc_cancel();
+            RX_LOG("# RX: found %s, connecting...\n", slot->name);
+            int cancel_rc = ble_gap_disc_cancel();
+            if (cancel_rc != 0) {
+                RX_LOG("# RX: scan cancel failed rc=%d\n", cancel_rc);
+            }
             g_scanning = 0;
             int rc = ble_gap_connect(g_addr_type, &(event->disc.addr), 100,
                                      NULL, gap_event, slot);
             if (rc != 0) {
-                printf("# RX: connect start failed rc=%d\n", rc);
+                RX_LOG("# RX: connect start failed rc=%d\n", rc);
                 clear_slot(slot);
                 start_scan();
             }
@@ -353,21 +429,25 @@ static int scan_event(struct ble_gap_event *event, void *arg)
 static void start_scan(void)
 {
     if (g_scanning) {
+        RX_LOG("# RX: scan already active\n");
         return;
     }
     if (has_connecting()) {
+        RX_LOG("# RX: scan blocked (connecting)\n");
         return;
     }
     if (active_conn_count() >= MAX_CONN) {
+        RX_LOG("# RX: scan blocked (max conn=%d)\n", MAX_CONN);
         return;
     }
     const struct ble_gap_disc_params scan_params = { 10000, 200, 0, 0, 0, 1 };
     int rc = ble_gap_disc(g_addr_type, 100, &scan_params, scan_event, NULL);
     if (rc != 0) {
-        printf("# RX: scan failed rc=%d\n", rc);
+        RX_LOG("# RX: scan failed rc=%d\n", rc);
         return;
     }
     g_scanning = 1;
+    RX_LOG("# RX: scan started (max_conn=%d)\n", MAX_CONN);
 }
 
 int main(void)

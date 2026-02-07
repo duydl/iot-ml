@@ -18,7 +18,9 @@
 
 #define CUSTOM_SVC_UUID     0xff00
 #define CUSTOM_CHR_UUID     0xee00
-#define DEVICE_NAME         "RIOT-IOT-TX"
+#ifndef TX_DEVICE_NAME
+#define TX_DEVICE_NAME      "RIOT-IOT-0"
+#endif
 
 #define SHT_NAME            "sht3x1"
 #define BMP_NAME            "bmp280"
@@ -143,8 +145,8 @@ static void start_advertising(void)
     adv_params.disc_mode = BLE_GAP_DISC_MODE_GEN;
 
     fields.flags = BLE_HS_ADV_F_DISC_GEN;
-    fields.name = (uint8_t *)DEVICE_NAME;
-    fields.name_len = strlen(DEVICE_NAME);
+    fields.name = (uint8_t *)TX_DEVICE_NAME;
+    fields.name_len = strlen(TX_DEVICE_NAME);
     fields.name_is_complete = 1;
 
     fields.uuids16 = (ble_uuid16_t[]) { BLE_UUID16_INIT(CUSTOM_SVC_UUID) };
@@ -168,7 +170,7 @@ static void start_advertising(void)
 
 int main(void)
 {
-    int rc = ble_svc_gap_device_name_set(DEVICE_NAME);
+    int rc = ble_svc_gap_device_name_set(TX_DEVICE_NAME);
     assert(rc == 0);
 
     rc = ble_gatts_count_cfg(gatt_svcs);

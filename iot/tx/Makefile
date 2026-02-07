@@ -20,6 +20,10 @@ CFLAGS += -DSHT3X_PARAM_REPEAT=SHT3X_LOW
 USEMODULE += nimble_svc_gap
 USEMODULE += nimble_svc_gatt
 
+# Allow overriding the BLE device name at build time
+TX_DEVICE_NAME ?= RIOT-BLE-0
+CFLAGS += -DTX_DEVICE_NAME=\"$(TX_DEVICE_NAME)\"
+
 # Comment this out to disable code in RIOT that does safety checking
 # which is not needed in a production environment but helps in the
 # development process:
