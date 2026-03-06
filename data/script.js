@@ -99,17 +99,19 @@ async function pollCSV() {
                 deviceStates[deviceId] = {
                     temp_val: row.temp_val,
                     last_update_ts: now,
-                    rssi: row.rssi
+                    rssi: row.rssi,
+                    ts: row.ts,
+                    seq: row.seq
                 };
             } else {
                 const state = deviceStates[deviceId];
                 
-                // Always update the RSSI representation
-                state.rssi = row.rssi;
-                
-                // Determine if temperature has genuinely updated
-                if (state.temp_val !== row.temp_val) {
+                // Determine if we actually received a new reading based on ts or seq
+                if (state.ts !== row.ts || state.seq !== row.seq) {
                     state.temp_val = row.temp_val;
+                    state.rssi = row.rssi;
+                    state.ts = row.ts;
+                    state.seq = row.seq;
                     state.last_update_ts = now;
                 }
             }
