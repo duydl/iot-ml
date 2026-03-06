@@ -51,6 +51,11 @@ function renderGrid() {
                 <div class="status-dot" title="${isStale ? 'Stale' : 'Active'}"></div>
             </div>
             
+            <div class="metric">
+                <span class="metric-label">Timestamp</span>
+                <span class="metric-value temp-value" style="font-size: 1rem;">${state.ts}</span>
+            </div>
+            
             <div class="metric" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
                 <span class="metric-label">RSSI</span>
                 <span class="metric-value rssi-value">${state.rssi} dBm</span>
@@ -97,21 +102,19 @@ async function pollCSV() {
             if (!deviceStates[deviceId]) {
                 // Initialize device
                 deviceStates[deviceId] = {
-                    temp_val: row.temp_val,
                     last_update_ts: now,
-                    rssi: row.rssi,
-                    ts: row.ts,
-                    seq: row.seq
+                    rssi: row.rssi || '-∞',
+                    ts: row.ts
                 };
             } else {
                 const state = deviceStates[deviceId];
                 
-                // Determine if we actually received a new reading based on ts or seq
-                if (state.ts !== row.ts || state.seq !== row.seq) {
-                    state.temp_val = row.temp_val;
-                    state.rssi = row.rssi;
+                // Always update the RSSI and ts representation in the state so it renders correctly
+                state.rssi = row.rssi || '-∞';
+                
+                // Determine if we actually received a new reading based on ts
+                if (state.ts !== row.ts) {
                     state.ts = row.ts;
-                    state.seq = row.seq;
                     state.last_update_ts = now;
                 }
             }
