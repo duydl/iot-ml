@@ -303,14 +303,21 @@ static int gap_event(struct ble_gap_event *event, void *arg)
         return 0;
 
     case BLE_GAP_EVENT_NOTIFY_RX: {
-        if (event->notify_rx.om->om_len < sizeof(sample_t)) {
-            RX_LOG("# RX: short notify len=%u\n",
-                   (unsigned)event->notify_rx.om->om_len);
+        uint16_t rx_len = event->notify_rx.om->om_len;
+        if (rx_len < sizeof(uint16_t)) {
+            RX_LOG("# RX: short notify len=%u\n", (unsigned)rx_len);
             return 0;
         }
 
         sample_t sample;
-        os_mbuf_copydata(event->notify_rx.om, 0, sizeof(sample), &sample);
+        memset(&sample, 0, sizeof(sample));
+        
+        if (rx_len >= sizeof(sample_t)) {
+            os_mbuf_copydata(event->notify_rx.om, 0, sizeof(sample), &sample);
+        } else {
+            // Minimal payload: just the sequence number
+            os_mbuf_copydata(event->notify_rx.om, 0, sizeof(uint16_t), &sample.seq);
+        }
 
         if (!slot) {
             slot = find_slot_by_handle(event->notify_rx.conn_handle);
@@ -319,12 +326,19 @@ static int gap_event(struct ble_gap_event *event, void *arg)
 
         int8_t rssi = 127;  // 127 often used as "unknown/unavailable"
         ble_gap_conn_rssi(event->notify_rx.conn_handle, &rssi); 
-        printf("%s,%u,%d,%d,%d,%d,%d,%d,%d\n",
-               dev_name,
-               sample.seq,
-               sample.temp_val, sample.temp_scale,
-               sample.hum_val, sample.hum_scale,
-               sample.press_val, sample.press_scale, rssi);
+        
+        if (rx_len >= sizeof(sample_t)) {
+            printf("%s,%u,%d,%d,%d,%d,%d,%d,%d\n",
+                   dev_name,
+                   sample.seq,
+                   sample.temp_val, sample.temp_scale,
+                   sample.hum_val, sample.hum_scale,
+                   sample.press_val, sample.press_scale, rssi);
+        } else {
+            printf("%s,%u,,,,,,,%d\n",
+                   dev_name,
+                   sample.seq, rssi);
+        }
 
         return 0;
     }

@@ -21,8 +21,12 @@ USEMODULE += nimble_svc_gap
 USEMODULE += nimble_svc_gatt
 
 # Allow overriding the BLE device name at build time
-TX_DEVICE_NAME ?= RIOT-BLE-0
+TX_DEVICE_NAME ?= RIOT-BLE-9
 CFLAGS += -DTX_DEVICE_NAME=\"$(TX_DEVICE_NAME)\"
+
+# Enable SHT/BMP sensor reading and sending (1 = enable, 0 = disable)
+ENABLE_SENSOR ?= 0
+CFLAGS += -DENABLE_SENSOR=$(ENABLE_SENSOR)
 
 # Comment this out to disable code in RIOT that does safety checking
 # which is not needed in a production environment but helps in the

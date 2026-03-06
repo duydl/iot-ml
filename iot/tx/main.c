@@ -22,6 +22,10 @@
 #define TX_DEVICE_NAME      "RIOT-IOT-0"
 #endif
 
+#ifndef ENABLE_SENSOR
+#define ENABLE_SENSOR       0
+#endif
+
 #define SHT_NAME            "sht3x1"
 #define BMP_NAME            "bmp280"
 
@@ -43,13 +47,16 @@ static uint8_t g_notify_state;
 static uint16_t g_conn_handle;
 static uint16_t g_notify_val_handle;
 
+#if ENABLE_SENSOR
 static saul_reg_t *g_temp_dev;
 static saul_reg_t *g_hum_dev;
 static saul_reg_t *g_press_dev;
 static uint8_t g_sensors_ready;
+#endif
 
 static void start_advertising(void);
 
+#if ENABLE_SENSOR
 static saul_reg_t *find_dev(uint8_t type, const char *name, const char *label)
 {
     saul_reg_t *dev = saul_reg_find_type_and_name(type, name);
@@ -58,6 +65,7 @@ static saul_reg_t *find_dev(uint8_t type, const char *name, const char *label)
     }
     return dev;
 }
+#endif
 
 static int gatt_access_cb(uint16_t conn_handle, uint16_t attr_handle,
                           struct ble_gatt_access_ctxt *ctxt, void *arg)
@@ -180,10 +188,14 @@ int main(void)
     rc = ble_gatts_start();
     assert(rc == 0);
 
-    g_temp_dev = find_dev(SAUL_SENSE_TEMP, BMP_NAME, "bmp280 temp");
-    g_press_dev = find_dev(SAUL_SENSE_PRESS, BMP_NAME, "bmp280 press");
-    g_hum_dev = find_dev(SAUL_SENSE_HUM, SHT_NAME, "sht3x hum");
-    g_sensors_ready = (g_temp_dev && g_press_dev && g_hum_dev);
+    #if ENABLE_SENSOR
+        g_temp_dev = find_dev(SAUL_SENSE_TEMP, BMP_NAME, "bmp280 temp");
+        g_press_dev = find_dev(SAUL_SENSE_PRESS, BMP_NAME, "bmp280 press");
+        g_hum_dev = find_dev(SAUL_SENSE_HUM, SHT_NAME, "sht3x hum");
+        g_sensors_ready = (g_temp_dev && g_press_dev && g_hum_dev);
+    #else
+    /* No sensors to initialize */
+#endif
 
     rc = ble_hs_util_ensure_addr(0);
     assert(rc == 0);
@@ -194,6 +206,7 @@ int main(void)
 
     uint16_t seq = 0;
     while (1) {
+    #if ENABLE_SENSOR
         if (g_conn_state && g_notify_state && g_sensors_ready) {
             phydat_t temp;
             phydat_t hum;
@@ -234,8 +247,25 @@ int main(void)
                 os_mbuf_free_chain(om);
             }
         }
+    #else
+        if (g_conn_state && g_notify_state) {
+            uint16_t minimal_payload = seq++;
+            
+            struct os_mbuf *om = ble_hs_mbuf_from_flat(&minimal_payload, sizeof(minimal_payload));
+            if (om == NULL) {
+                printf("# TX: mbuf alloc failed\n");
+                goto sleep;
+            }
 
-sleep:
+            int rc = ble_gatts_notify_custom(g_conn_handle, g_notify_val_handle, om);
+            if (rc != 0) {
+                printf("# TX: notify failed rc=%d\n", rc);
+                os_mbuf_free_chain(om);
+            }
+        }
+    #endif
+
+    sleep:
         ztimer_sleep(ZTIMER_MSEC, SAMPLE_PERIOD_MS);
     }
 
