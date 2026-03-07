@@ -8,6 +8,7 @@ let deviceStates = {}; // Stores rssi, last_update_ts, entryCount, hz per device
 const dirListEl = document.getElementById('dir-list');
 const deviceGridEl = document.getElementById('device-grid');
 const selectedInfoEl = document.getElementById('selected-info');
+const totalInfoEl = document.getElementById('total-info');
 
 // Parse simple CSV string into an array of objects
 function parseCSV(csvText) {
@@ -100,14 +101,20 @@ async function pollCSV() {
         const now = Date.now();
         const latestByDevice = {};
         const countByDevice = {};
+        let totalEntries = 0;
         
         // Find the absolute latest row for each device in the entire CSV
         rows.forEach(row => {
             if (row.device) {
                 latestByDevice[row.device] = row;
                 countByDevice[row.device] = (countByDevice[row.device] || 0) + 1;
+                totalEntries += 1;
             }
         });
+
+        if (totalInfoEl) {
+            totalInfoEl.textContent = `Total entries: ${totalEntries}`;
+        }
         
         // Assess updates
         for (const [deviceId, row] of Object.entries(latestByDevice)) {
