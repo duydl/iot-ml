@@ -2,7 +2,7 @@ const STALE_TIMEOUT_MS = 2000; // 2 seconds threshold to mark as stale
 const POLL_INTERVAL_HZ = 500;  // 2Hz = 500ms
 let pollingInterval = null;
 let currentDir = null;
-let deviceStates = {}; // Stores temp_val, rssi, last_update_ts per device
+let deviceStates = {}; // Stores rssi, last_update_ts, entryCount, hz per device
 
 // Elements
 const dirListEl = document.getElementById('dir-list');
@@ -60,6 +60,11 @@ function renderGrid() {
                 <span class="metric-label">Frequency (Hz)</span>
                 <span class="metric-value" style="color: #6ee7b7;">${state.hz ? state.hz.toFixed(2) : '--'}</span>
             </div>
+
+            <div class="metric">
+                <span class="metric-label">Entries</span>
+                <span class="metric-value">${state.entryCount ?? 0}</span>
+            </div>
             
             <div class="metric" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
                 <span class="metric-label">RSSI</span>
@@ -94,16 +99,19 @@ async function pollCSV() {
         
         const now = Date.now();
         const latestByDevice = {};
+        const countByDevice = {};
         
         // Find the absolute latest row for each device in the entire CSV
         rows.forEach(row => {
             if (row.device) {
                 latestByDevice[row.device] = row;
+                countByDevice[row.device] = (countByDevice[row.device] || 0) + 1;
             }
         });
         
         // Assess updates
         for (const [deviceId, row] of Object.entries(latestByDevice)) {
+            const entryCount = countByDevice[deviceId] || 0;
             if (!deviceStates[deviceId]) {
                 // Initialize device
                 deviceStates[deviceId] = {
@@ -111,31 +119,34 @@ async function pollCSV() {
                     rssi: row.rssi || '-∞',
                     ts: row.ts,
                     seq: row.seq,
-                    hz: 0
+                    hz: 0,
+                    entryCount: entryCount
                 };
             } else {
                 const state = deviceStates[deviceId];
+                const prevCount = state.entryCount;
                 
                 // Always update the RSSI and ts representation in the state so it renders correctly
                 state.rssi = row.rssi || '-∞';
                 
                 // Determine if we actually received a new reading based on ts
-                if (state.ts !== row.ts) {
+                if (state.ts !== row.ts || prevCount !== entryCount) {
                     const prevTs = new Date(state.ts.replace(' ', 'T')).getTime();
                     const newTs = new Date(row.ts.replace(' ', 'T')).getTime();
-                    const prevSeq = parseInt(state.seq);
-                    const newSeq = parseInt(row.seq);
+                    const prevCountNum = parseInt(prevCount);
+                    const newCount = parseInt(entryCount);
 
-                    if (!isNaN(prevTs) && !isNaN(newTs) && !isNaN(prevSeq) && !isNaN(newSeq)) {
+                    if (!isNaN(prevTs) && !isNaN(newTs) && !isNaN(prevCountNum) && !isNaN(newCount)) {
                         const dt = (newTs - prevTs) / 1000;
-                        const dSeq = newSeq - prevSeq;
-                        if (dt > 0 && dSeq > 0) {
-                            state.hz = dSeq / dt;
+                        const dCount = newCount - prevCountNum;
+                        if (dt > 0 && dCount > 0) {
+                            state.hz = dCount / dt;
                         }
                     }
 
                     state.ts = row.ts;
                     state.seq = row.seq;
+                    state.entryCount = entryCount;
                     state.last_update_ts = now;
                 }
             }
