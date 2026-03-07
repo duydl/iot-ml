@@ -18,6 +18,7 @@ echo "# Logging RX to $OUTFILE"
 echo "# PORT=$PORT BAUD=$BAUD"
 
 PORT="$PORT" BAUD="$BAUD" make -C "$ROOT/iot/rx" term \
+  | tee "$OUTDIR/term.log" \
   | awk '
     {
       line = $0;
