@@ -56,6 +56,11 @@ function renderGrid() {
                 <span class="metric-value temp-value" style="font-size: 1rem;">${state.ts}</span>
             </div>
             
+            <div class="metric">
+                <span class="metric-label">Frequency (Hz)</span>
+                <span class="metric-value" style="color: #6ee7b7;">${state.hz ? state.hz.toFixed(2) : '--'}</span>
+            </div>
+            
             <div class="metric" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
                 <span class="metric-label">RSSI</span>
                 <span class="metric-value rssi-value">${state.rssi} dBm</span>
@@ -104,7 +109,9 @@ async function pollCSV() {
                 deviceStates[deviceId] = {
                     last_update_ts: now,
                     rssi: row.rssi || '-∞',
-                    ts: row.ts
+                    ts: row.ts,
+                    seq: row.seq,
+                    hz: 0
                 };
             } else {
                 const state = deviceStates[deviceId];
@@ -114,7 +121,21 @@ async function pollCSV() {
                 
                 // Determine if we actually received a new reading based on ts
                 if (state.ts !== row.ts) {
+                    const prevTs = new Date(state.ts.replace(' ', 'T')).getTime();
+                    const newTs = new Date(row.ts.replace(' ', 'T')).getTime();
+                    const prevSeq = parseInt(state.seq);
+                    const newSeq = parseInt(row.seq);
+
+                    if (!isNaN(prevTs) && !isNaN(newTs) && !isNaN(prevSeq) && !isNaN(newSeq)) {
+                        const dt = (newTs - prevTs) / 1000;
+                        const dSeq = newSeq - prevSeq;
+                        if (dt > 0 && dSeq > 0) {
+                            state.hz = dSeq / dt;
+                        }
+                    }
+
                     state.ts = row.ts;
+                    state.seq = row.seq;
                     state.last_update_ts = now;
                 }
             }
