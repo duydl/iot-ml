@@ -1,0 +1,495 @@
+2026-03-06 10:38:17,419 # RIOT-BLE-0,2513,1539,-2,5145,-2,10118,1,-58
+2026-03-06 10:38:17,520 # RIOT-BLE-0,2514,1539,-2,5141,-2,10118,1,-61
+2026-03-06 10:38:17,620 # RIOT-BLE-0,2515,1539,-2,5142,-2,10118,1,-62
+2026-03-06 10:38:17,721 # RIOT-BLE-0,2516,1539,-2,5136,-2,10119,1,-61
+2026-03-06 10:38:17,873 # RIOT-BLE-0,2517,1539,-2,5149,-2,10118,1,-66
+2026-03-06 10:38:17,970 # RIOT-BLE-0,2518,1538,-2,5150,-2,10118,1,-68
+2026-03-06 10:38:18,070 # RIOT-BLE-0,2519,1538,-2,5154,-2,10119,1,-66
+2026-03-06 10:38:18,221 # RIOT-BLE-0,2520,1538,-2,5145,-2,10118,1,-64
+2026-03-06 10:38:18,320 # RIOT-BLE-0,2521,1537,-2,5155,-2,10119,1,-63
+2026-03-06 10:38:18,421 # RIOT-BLE-0,2522,1537,-2,5159,-2,10205,1,-61
+2026-03-06 10:38:18,620 # RIOT-BLE-0,2523,1537,-2,5159,-2,10122,1,-65
+2026-03-06 10:38:18,670 # RIOT-BLE-0,2524,1538,-2,5151,-2,10124,1,-63
+2026-03-06 10:38:18,769 # RIOT-BLE-0,2525,1538,-2,5150,-2,10121,1,-63
+2026-03-06 10:38:18,919 # RIOT-BLE-0,2526,1539,-2,5151,-2,10119,1,-62
+2026-03-06 10:38:19,020 # RIOT-BLE-0,2527,1538,-2,5161,-2,10120,1,-60
+2026-03-06 10:38:19,119 # RIOT-BLE-0,2528,1538,-2,5163,-2,10120,1,-61
+2026-03-06 10:38:19,222 # RIOT-BLE-0,2529,1538,-2,5165,-2,10120,1,-62
+2026-03-06 10:38:19,370 # RIOT-BLE-0,2530,1537,-2,5163,-2,10120,1,-66
+2026-03-06 10:38:19,469 # RIOT-BLE-0,2531,1537,-2,5158,-2,10120,1,-66
+2026-03-06 10:38:19,570 # RIOT-BLE-0,2532,1537,-2,5175,-2,10120,1,-67
+2026-03-06 10:38:19,723 # RIOT-BLE-0,2533,1537,-2,5166,-2,10120,1,-70
+2026-03-06 10:38:19,824 # RIOT-BLE-0,2534,1536,-2,5171,-2,10119,1,-67
+2026-03-06 10:38:19,921 # RIOT-BLE-0,2535,1535,-2,5160,-2,10119,1,-73
+2026-03-06 10:38:20,420 # RIOT-BLE-0,2536,1536,-2,5156,-2,10120,1,-70
+2026-03-06 10:38:20,425 # RIOT-BLE-0,2537,1536,-2,5160,-2,10121,1,-69
+2026-03-06 10:38:20,521 # RIOT-BLE-0,2540,1538,-2,5164,-2,10209,1,-71
+2026-03-06 10:38:20,720 # RIOT-BLE-0,2541,1539,-2,5167,-2,10157,1,-72
+2026-03-06 10:38:20,723 # RIOT-BLE-0,2542,1540,-2,5173,-2,10203,1,-71
+2026-03-06 10:38:21,170 # RIOT-BLE-0,2543,1541,-2,5163,-2,10121,1,-70
+2026-03-06 10:38:21,174 # RIOT-BLE-0,2544,1543,-2,5171,-2,10122,1,-71
+2026-03-06 10:38:21,420 # RIOT-BLE-0,2546,1544,-2,5173,-2,10122,1,-72
+2026-03-06 10:38:21,423 # RIOT-BLE-0,2547,1545,-2,5182,-2,10118,1,-72
+2026-03-06 10:38:21,622 # RIOT-BLE-0,2549,1543,-2,5173,-2,10119,1,-70
+2026-03-06 10:38:21,674 # RIOT-BLE-0,2550,1542,-2,5180,-2,10121,1,-72
+2026-03-06 10:38:21,771 # RIOT-BLE-0,2551,1542,-2,5175,-2,10120,1,-72
+2026-03-06 10:38:21,971 # RIOT-BLE-0,2552,1541,-2,5176,-2,10120,1,-73
+2026-03-06 10:38:22,270 # RIOT-BLE-0,2553,1540,-2,5177,-2,10120,1,-75
+2026-03-06 10:38:22,275 # RIOT-BLE-0,2554,1539,-2,5182,-2,10120,1,-75
+2026-03-06 10:38:22,422 # RIOT-BLE-0,2556,1538,-2,5182,-2,10119,1,-67
+2026-03-06 10:38:22,521 # RIOT-BLE-0,2557,1538,-2,5181,-2,10118,1,-71
+2026-03-06 10:38:22,570 # RIOT-BLE-0,2558,1538,-2,5173,-2,10117,1,-68
+2026-03-06 10:38:22,596 # 03-06 10:38:18.919,RIOT-BLE-0,2526,1539,-2,5151,-2,10119,1,-62
+2026-03-06 10:38:19.020,RIOT-BLE-0,2527,1538,-2,5161,-2,10120,1,-60
+2026-03-06 10:38:19.119,RIOT-BLE-0,2528,1538,-2,5163,-2,10120,1,-61
+2026-03-06 10:38:19.222,RIOT-BLE-0,2529,1538,-2,5165,-2,10120,1,-62
+2026-03-06 10:38:19.370,RIOT-BLE-0,2530,1537,-2,5163,-2,10120,1,-66
+2026-03-06 10:38:19.469,RIOT-BLE-0,2531,1537,-2,5158,-2,10120,1,-66
+2026-03-06 10:38:19.570,RIOT-BLE-0,2532,1537,-2,5175,-2,10120,1,-67
+2026-03-06 10:38:19.723,RIOT-BLE-0,2533,1537,-2,5166,-2,10120,1,-70
+2026-03-06 10:38:19.824,RIOT-BLE-0,2534,1536,-2,5171,-2,10119,1,-67
+2026-03-06 10:38:19.921,RIOT-BLE-0,2535,1535,-2,5160,-2,10119,1,-73
+2026-03-06 10:38:20.420,RIOT-BLE-0,2536,1536,-2,5156,-2,10120,1,-70
+2026-03-06 10:38:20.425,RIOT-BLE-0,2537,1536,-2,5160,-2,10121,1,-69
+2026-03-06 10:38:20.521,RIOT-BLE-0,2540,1538,-2,5164,-2,10209,1,-71
+2026-03-06 10:38:20.720,RIOT-BLE-0,2541,1539,-2,5167,-2,10157,1,-72
+2026-03-06 10:38:20.723,RIOT-BLE-0,2542,1540,-2,5173,-2,10203,1,-71
+2026-03-06 10:38:21.170,RIOT-BLE-0,2543,1541,-2,5163,-2,10121,1,-70
+2026-03-06 10:38:21.174,RIOT-BLE-0,2544,1543,-2,5171,-2,10122,1,-71
+2026-03-06 10:38:21.420,RIOT-BLE-0,2546,1544,-2,5173,-2,10122,1,-72
+2026-03-06 10:38:21.423,RIOT-BLE-0,2547,1545,-2,5182,-2,10118,1,-72
+2026-03-06 10:38:21.622,RIOT-BLE-0,2549,1543,-2,5173,-2,10119,1,-70
+2026-03-06 10:38:21.674,RIOT-BLE-0,2550,1542,-2,5180,-2,10121,1,-72
+2026-03-06 10:38:21.771,RIOT-BLE-0,2551,1542,-2,5175,-2,10120,1,-72
+2026-03-06 10:38:21.971,RIOT-BLE-0,2552,1541,-2,5176,-2,10120,1,-73
+2026-03-06 10:38:22.270,RIOT-BLE-0,2553,1540,-2,5177,-2,10120,1,-75
+2026-03-06 10:38:22.275,RIOT-BLE-0,2554,1539,-2,5182,-2,10120,1,-75
+2026-03-06 10:38:22.422,RIOT-BLE-0,2556,1538,-2,5182,-2,10119,1,-67
+2026-03-06 10:38:22.521,RIOT-BLE-0,2557,1538,-2,5181,-2,10118,1,-71
+2026-03-06 10:38:22.570,RIOT-BLE-0,2558,1538,-2,5173,-2,10117,1,-68
+2026-03-06 10:38:22.720,RIOT-BLE-0,2559,1537,-2,5179,-2,10118,1,-71
+2026-03-06 10:38:22.822,RIOT-BLE-0,2560,1537,-2,5166,-2,10118,1,-71
+2026-03-06 10:38:23.170,RIOT-BLE-0,2561,1536,-2,5179,-2,10118,1,-71
+2026-03-06 10:38:23.222,RIOT-BLE-0,2562,1536,-2,5184,-2,10118,1,-73
+2026-03-06 10:38:23.321,RIOT-BLE-0,2564,1536,-2,5182,-2,10118,1,-71
+2026-03-06 10:38:23.574,RIOT-BLE-0,2565,1537,-2,5182,-2,10118,1,-71
+2026-03-06 10:38:23.578,RIOT-BLE-0,2566,1536,-2,5188,-2,10118,1,-71
+2026-03-06 10:38:23.624,RIOT-BLE-0,2567,1535,-2,5185,-2,10118,1,-72
+2026-03-06 10:38:23.725,RIOT-BLE-0,2568,1536,-2,5179,-2,10118,1,-71
+2026-03-06 10:38:23.871,RIOT-BLE-0,2569,1535,-2,5188,-2,10120,1,-72
+2026-03-06 10:38:23.971,RIOT-BLE-0,2570,1537,-2,5191,-2,10119,1,-73
+2026-03-06 10:38:24.121,RIOT-BLE-0,2571,1538,-2,5180,-2,10120,1,-73
+2026-03-06 10:38:24.221,RIOT-BLE-0,2572,1538,-2,5173,-2,10120,1,-71
+2026-03-06 10:38:24.321,RIOT-BLE-0,2573,1540,-2,5187,-2,10120,1,-75
+2026-03-06 10:38:24.521,RIOT-BLE-0,2574,1541,-2,5182,-2,10120,1,-73
+2026-03-06 10:38:24.921,RIOT-BLE-0,2575,1543,-2,5179,-2,10120,1,-73
+2026-03-06 10:38:24.925,RIOT-BLE-0,2576,1543,-2,5181,-2,10119,1,-73
+2026-03-06 10:38:25.121,RIOT-BLE-0,2579,1543,-2,5185,-2,10119,1,-70
+2026-03-06 10:38:25.124,RIOT-BLE-0,2580,1544,-2,5183,-2,10120,1,-71
+2026-03-06 10:38:25.873,RIOT-BLE-0,2581,1545,-2,5190,-2,10119,1,-73
+2026-03-06 10:38:25.875,RIOT-BLE-0,2582,1544,-2,5179,-2,10120,1,-72
+2026-03-06 10:38:26.122,RIOT-BLE-0,2587,1546,-2,5186,-2,10119,1,-72
+2026-03-06 10:38:26.124,RIOT-BLE-0,2588,1546,-2,5201,-2,10120,1,-73
+2026-03-06 10:38:27.173,RIOT-BLE-0,2589,1546,-2,5188,-2,10120,1,-74
+2026-03-06 10:38:27.177,RIOT-BLE-0,2590,1547,-2,5200,-2,10120,1,-74
+2026-03-06 10:38:27.222,RIOT-BLE-0,2598,1551,-2,5192,-2,10119,1,-72
+2026-03-06 10:38:27.373,RIOT-BLE-0,2599,1551,-2,5184,-2,10120,1,-70
+2026-03-06 10:38:27.572,RIOT-BLE-0,2600,1553,-2,5203,-2,10119,1,-74
+2026-03-06 10:38:27.575,RIOT-BLE-0,2601,1553,-2,5195,-2,10120,1,-75
+2026-03-06 10:38:28.473,RIOT-BLE-0,2602,1553,-2,5192,-2,10120,1,-75
+2026-03-06 10:38:28.476,RIOT-BLE-0,2603,1555,-2,5195,-2,10119,1,-75
+2026-03-06 10:38:28.523,RIOT-BLE-0,2609,1554,-2,5202,-2,10118,1,-74
+2026-03-06 10:38:28.922,RIOT-BLE-0,2610,1554,-2,5199,-2,10118,1,-73
+2026-03-06 10:38:29.373,RIOT-BLE-0,2611,1553,-2,5193,-2,10118,1,-70
+2026-03-06 10:38:29.377,RIOT-BLE-0,2613,1553,-2,5196,-2,10119,1,-70
+2026-03-06 10:38:29.473,RIOT-BLE-0,2617,1554,-2,5183,-2,10118,1,-75
+2026-03-06 10:38:35.399,RIOT-BLE-0,2661,1549,-2,5151,-2,10118,1,-72
+2026-03-06 10:38:37.052,RIOT-BLE-0,2663,1550,-2,5150,-2,10118,1,-77
+2026-03-06 10:38:37.746,RIOT-BLE-0,2664,1550,-2,5151,-2,10118,1,-74
+2026-03-06 10:38:37.751,RIOT-BLE-0,2677,1548,-2,5147,-2,10118,1,-73
+2026-03-06 10:38:38.395,RIOT-BLE-0,2683,1547,-2,5129,-2,10118,1,-75
+2026-03-06 10:38:38.398,RIOT-BLE-0,2684,1547,-2,5131,-2,10118,1,-76
+2026-03-06 10:38:49.821,RIOT-BLE-0,2732,1530,-2,5189,-2,10118,1,-71
+2026-03-06 10:38:49.967,RIOT-BLE-0,2733,1531,-2,5192,-2,10118,1,-71
+2026-03-06 10:38:50.067,RIOT-BLE-0,2734,1531,-2,5195,-2,10118,1,-76
+2026-03-06 10:38:50.168,RIOT-BLE-0,2735,1530,-2,5184,-2,10118,1,-74
+2026-03-06 10:38:50.217,RIOT-BLE-0,2736,1530,-2,5201,-2,10118,1,-75
+2026-03-06 10:38:50.366,RIOT-BLE-0,2737,1531,-2,5199,-2,10118,1,-70
+2026-03-06 10:38:50.468,RIOT-BLE-0,2738,1530,-2,5193,-2,10118,1,-73
+2026-03-06 10:38:50.666,RIOT-BLE-0,2739,1531,-2,5196,-2,10119,1,-72
+2026-03-06 10:38:50.716,RIOT-BLE-0,2740,1530,-2,5199,-2,10119,1,-68
+2026-03-06 10:38:50.816,RIOT-BLE-0,2741,1531,-2,5202,-2,10119,1,-71
+2026-03-06 10:38:50.916,RIOT-BLE-0,2742,1532,-2,5209,-2,10119,1,-70
+2026-03-06 10:38:51.072,RIOT-BLE-0,2743,1531,-2,5202,-2,10119,1,-68
+2026-03-06 10:38:51.168,RIOT-BLE-0,2744,1531,-2,5193,-2,10119,1,-71
+2026-03-06 10:38:51.267,RIOT-BLE-0,2745,1532,-2,5181,-2,10119,1,-70
+2026-03-06 10:38:51.417,RIOT-BLE-0,2746,1532,-2,5204,-2,10119,1,-70
+2026-03-06 10:38:51.517,RIOT-BLE-0,2747,1532,-2,5195,-2,10119,1,-72
+2026-03-06 10:38:51.616,RIOT-BLE-0,2748,1533,-2,5203,-2,10119,1,-72
+2026-03-06 10:38:51.718,RIOT-BLE-0,2749,1533,-2,5197,-2,10119,1,-72
+2026-03-06 10:38:51.968,RIOT-BLE-0,2750,1534,-2,5199,-2,10119,1,-69
+2026-03-06 10:38:51.971,RIOT-BLE-0,2751,1534,-2,5191,-2,10120,1,-69
+2026-03-06 10:38:52.117,RIOT-BLE-0,2752,1535,-2,5194,-2,10119,1,-71
+2026-03-06 10:38:52.217,RIOT-BLE-0,2753,1535,-2,5208,-2,10119,1,-69
+2026-03-06 10:38:52.367,RIOT-BLE-0,2754,1535,-2,5201,-2,10119,1,-69
+2026-03-06 10:38:52.417,RIOT-BLE-0,2755,1536,-2,5190,-2,10119,1,-72
+2026-03-06 10:38:52.517,RIOT-BLE-0,2756,1535,-2,5203,-2,10118,1,-72
+2026-03-06 10:38:52.718,RIOT-BLE-0,2757,1536,-2,5209,-2,10119,1,-69
+2026-03-06 10:38:52.767,RIOT-BLE-0,2758,1537,-2,5207,-2,10119,1,-70
+2026-03-06 10:38:52.868,RIOT-BLE-0,2759,1537,-2,5203,-2,10119,1,-72
+2026-03-06 10:38:53.368,RIOT-BLE-0,2760,1537,-2,5203,-2,10119,1,-72
+2026-03-06 10:38:53.370,RIOT-BLE-0,2761,1538,-2,5202,-2,10120,1,-72
+2026-03-06 10:38:53.469,RIOT-BLE-0,2764,1538,-2,5192,-2,10119,1,-71
+2026-03-06 10:38:53.570,RIOT-BLE-0,2765,1538,-2,5206,-2,10119,1,-71
+2026-03-06 10:38:53.718,RIOT-BLE-0,2766,1540,-2,5203,-2,10119,1,-74
+2026-03-06 10:38:53.868,RIOT-BLE-0,2767,1540,-2,5211,-2,10119,1,-70
+2026-03-06 10:38:53.918,RIOT-BLE-0,2768,1539,-2,5200,-2,10119,1,-73
+2026-03-06 10:38:54.068,RIOT-BLE-0,2769,1540,-2,5208,-2,10119,1,-70
+2026-03-06 10:38:54.217,RIOT-BLE-0,2770,1539,-2,5203,-2,10119,1,-75
+2026-03-06 10:38:54.418,RIOT-BLE-0,2771,1540,-2,5203,-2,10119,1,-71
+2026-03-06 10:38:54.421,RIOT-BLE-0,2772,1540,-2,5202,-2,10119,1,-71
+2026-03-06 10:38:55.068,RIOT-BLE-0,2773,1541,-2,5204,-2,10119,1,-71
+2026-03-06 10:38:55.073,RIOT-BLE-0,2774,1541,-2,5210,-2,10119,1,-71
+2026-03-06 10:38:55.268,RIOT-BLE-0,2779,1544,-2,5206,-2,10119,1,-74
+2026-03-06 10:38:56.173,RIOT-BLE-0,2780,1543,-2,5215,-2,10119,1,-74
+2026-03-06 10:38:56.177,RIOT-BLE-0,2781,1543,-2,5207,-2,10118,1,-74
+2026-03-06 10:38:56.267,RIOT-BLE-0,2788,1544,-2,5204,-2,10118,1,-73
+2026-03-06 10:38:56.467,RIOT-BLE-0,2789,1544,-2,5195,-2,10119,1,-73
+2026-03-06 10:38:56.471,RIOT-BLE-0,2790,1544,-2,5202,-2,10119,1,-72
+2026-03-06 10:38:56.817,RIOT-BLE-0,2791,1545,-2,5204,-2,10118,1,-74
+2026-03-06 10:38:57.369,RIOT-BLE-0,2792,1545,-2,5203,-2,10119,1,-73
+2026-03-06 10:38:57.374,RIOT-BLE-0,2794,1545,-2,5193,-2,10119,1,-73
+2026-03-06 10:38:57.523,RIOT-BLE-0,27rovider vscode.git 3096
+2026-03-06 10:40:21,088 # RIOT-BLE-0,3523,1553,-2,4930,-2,10118,1,-70
+2026-03-06 10:40:21,093 # RIOT-BLE-0,3524,1553,-2,4926,-2,10118,1,-70
+2026-03-06 10:40:21,185 # RIOT-BLE-0,3525,1552,-2,4928,-2,10118,1,-64
+2026-03-06 10:40:21,336 # RIOT-BLE-0,3526,1553,-2,4919,-2,10118,1,-70
+2026-03-06 10:40:21,436 # RIOT-BLE-0,3527,1553,-2,4920,-2,10118,1,-71
+2026-03-06 10:40:21,636 # RIOT-BLE-0,3528,1553,-2,4928,-2,10118,1,-73
+2026-03-06 10:40:21,686 # RIOT-BLE-0,3529,1553,-2,4939,-2,10118,1,-71
+2026-03-06 10:40:21,784 # RIOT-BLE-0,3530,1554,-2,4922,-2,10118,1,-67
+2026-03-06 10:40:21,885 # RIOT-BLE-0,3531,1554,-2,4928,-2,10118,1,-71
+2026-03-06 10:40:28,752 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-75 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:40:28,754 # # RX: found RIOT-BLE-0, connecting...
+2026-03-06 10:40:29,519 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-77 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:40:29,522 # # RX: found RIOT-BLE-0, connecting...
+2026-03-06 10:40:29,783 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-77 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:40:29,784 # # RX: found RIOT-BLE-0, connecting...
+2026-03-06 10:40:29,916 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-75 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:40:29,917 # # RX: found RIOT-BLE-0, connecting...
+2026-03-06 10:40:31,533 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-78 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:40:31,536 # # RX: found RIOT-BLE-0, connecting...
+2026-03-06 10:40:31,665 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-75 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:40:31,666 # # RX: found RIOT-BLE-0, connecting...
+2026-03-06 10:40:31,791 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-76 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:40:31,792 # # RX: found RIOT-BLE-0, connecting...
+2026-03-06 10:40:31,854 # # RX: connected handle=2 dev=RIOT-BLE-0 addr=f2:eb:ea:da:93:bb
+2026-03-06 10:40:32,103 # # RX: svc discovery complete (dev=RIOT-BLE-0)
+2026-03-06 10:40:35,049 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-77 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:40:35,051 # # RX: found RIOT-BLE-0, connecting...
+2026-03-06 10:40:37,862 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-78 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:40:37,864 # # RX: found RIOT-BLE-0, connecting...
+2026-03-06 10:40:38,560 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-77 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:40:38,563 # # RX: found RIOT-BLE-0, connecting...
+2026-03-06 10:40:38,628 # # RX: connected handle=5 dev=RIOT-BLE-0 addr=f2:eb:ea:da:93:bb
+2026-03-06 10:40:39,029 # # RX: svc found (start=10 end=13 dev=RIOT-BLE-0)
+2026-03-06 10:42:30,076 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:30,077 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:30,135 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:30,137 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:30,270 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:30,273 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:30,341 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:30,344 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:30,465 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:30,468 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:30,601 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:30,603 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:30,665 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:30,668 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:30,804 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-58 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:30,806 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:30,872 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-58 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:30,874 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:31,001 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-58 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:31,006 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:31,062 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-58 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:31,065 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:31,201 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:31,204 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:31,268 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:31,272 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:31,397 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:31,400 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:31,530 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:31,533 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:31,591 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-55 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:31,594 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:31,724 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-53 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:31,727 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:31,788 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-53 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:31,788 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:31,906 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-56 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:31,909 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:32,033 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-56 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:32,035 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:32,094 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-55 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:32,096 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:32,225 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-55 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:32,226 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:32,296 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-56 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:32,298 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:32,423 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:32,426 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:32,545 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-56 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:32,547 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:32,612 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-56 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:32,613 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:32,738 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-54 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:32,740 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:32,807 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-56 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:32,809 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:32,935 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-54 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:32,938 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:32,998 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-56 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:33,001 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:33,134 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:33,134 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:33,253 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-58 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:33,254 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:33,314 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-55 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:33,316 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:33,438 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-67 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:33,440 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:33,563 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-64 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:33,567 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:33,629 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-60 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:33,631 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:33,758 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-55 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:33,760 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:33,823 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:33,825 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:33,954 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-56 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:33,956 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:34,024 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-65 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:34,025 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:34,147 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-56 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:34,150 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:34,287 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-55 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:34,290 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:34,342 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-55 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:34,344 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:34,473 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-53 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:34,476 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:34,537 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-53 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:34,540 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:34,667 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-53 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:34,672 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:34,792 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-53 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:34,796 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:34,856 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-53 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:34,858 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:34,986 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-54 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:34,991 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:35,053 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-55 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:35,056 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:35,179 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-59 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:35,182 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:35,309 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-67 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:35,311 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:35,376 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-57 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:35,380 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:35,508 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-60 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:35,511 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:35,573 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-65 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:35,577 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:35,702 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-72 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:35,706 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:35,769 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-72 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:35,772 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:35,900 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-71 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:35,903 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:36,031 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-68 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:36,034 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:36,092 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-72 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:36,096 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:36,563 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-77 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:36,564 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:36,629 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-72 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:36,631 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:36,759 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-64 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:36,761 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:36,825 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-64 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:36,827 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:36,894 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:36,896 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:37,022 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:37,024 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:37,154 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:37,156 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:37,219 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:37,221 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:37,351 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:37,351 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:37,413 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:37,414 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:37,542 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-60 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:37,545 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:37,611 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:37,613 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:37,735 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:37,738 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:37,869 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:37,871 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:37,933 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:37,935 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:38,063 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-64 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:38,066 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:38,126 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-65 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:38,129 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:38,254 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-69 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:38,257 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:38,385 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-69 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:38,390 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:38,447 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-68 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:38,449 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:38,575 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-70 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:38,577 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:38,642 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-70 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:38,644 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:38,770 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-68 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:38,774 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:38,896 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-69 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:38,900 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:38,962 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-66 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:38,963 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:39,089 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:39,092 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:39,155 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-63 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:39,159 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:39,286 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-67 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:39,288 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:39,416 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-74 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:39,418 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:39,545 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-70 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:39,547 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:39,614 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-64 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:39,616 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:39,677 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:39,680 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:39,803 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-63 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:39,805 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:39,928 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-66 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:39,932 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:40,000 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-65 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:40,001 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:40,135 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-68 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:40,138 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:40,199 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-67 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:40,202 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:40,323 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-68 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:40,325 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:40,388 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-65 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:40,389 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:40,788 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-79 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:40,791 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:40,848 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-72 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:40,851 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:40,975 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-74 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:40,978 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:42:41,044 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-69 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:42:41,045 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:45,373 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:45,436 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:45,440 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:45,567 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-63 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:45,570 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:45,634 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:45,636 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:45,762 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-63 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:45,765 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:45,826 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:45,829 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:45,954 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:45,957 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:46,091 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:46,094 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:46,148 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-63 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:46,151 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:46,284 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-63 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:46,287 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:46,350 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-63 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:46,351 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:46,471 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-63 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:46,473 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:46,534 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-63 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:46,536 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:46,661 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-63 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:46,664 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:46,795 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:46,796 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:46,856 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:46,857 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:46,984 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:46,988 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:47,049 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:47,051 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:47,181 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-62 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:47,184 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:47,312 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:47,314 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:47,375 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:47,377 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:47,512 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:47,514 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:47,639 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:47,642 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:47,707 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:47,708 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:47,767 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:47,769 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:47,898 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:47,901 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:48,029 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:48,034 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:48,097 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:48,100 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:48,226 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:48,228 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:48,290 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:48,292 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:48,417 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:48,418 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:48,481 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:48,485 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:48,610 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:48,612 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:48,740 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:48,743 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:48,808 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:48,811 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:48,945 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:48,948 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:49,014 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:49,015 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:49,148 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:49,149 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:49,217 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:49,219 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:49,339 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:49,341 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:49,403 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:49,406 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:49,535 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:49,538 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:49,664 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:49,666 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:49,729 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:49,732 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:49,933 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:49,935 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:50,064 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:50,067 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:50,129 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 name_match=1
+2026-03-06 10:43:50,131 # # RX: skip RIOT-BLE-0 (already tracked)
+2026-03-06 10:43:50,261 # # RX: adv addr=f2:eb:ea:da:93:bb rssi=-61 name=RIOT-BLE-0 uuid=1 na
