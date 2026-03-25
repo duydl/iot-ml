@@ -20,8 +20,9 @@ def parse_args():
     parser.add_argument("--task", type=str, required=True, choices=["env", "node"])
     parser.add_argument("--seq_len", type=int, required=True)
     parser.add_argument("--overlap", type=float, required=True)
-    parser.add_argument("--split", type=str, required=True, choices=["random", "leave_one_env_out"])
-    parser.add_argument("--test_env", type=int, default=None)
+    parser.add_argument("--split", type=str, required=True, choices=["random", "oneout"])
+    parser.add_argument("--test_env", type=int, default=3)
+    parser.add_argument("--test_node", type=int, default=1)
     parser.add_argument("--model", type=str, required=True, choices=["cnn", "resnet"])
 
     parser.add_argument("--epochs", type=int, default=30)
@@ -43,8 +44,8 @@ def load_processed_data(task, seq_len, overlap):
     X = data["X"]
     y = data["y"]
     env_ids = data["env_ids"]
-
-    return X, y, env_ids, file_path
+    node_ids = data["node_ids"]
+    return X, y, env_ids,node_ids, file_path
 
 
 def build_model(model_name, num_classes):
@@ -110,15 +111,27 @@ def evaluate(model, loader, criterion, device):
 
 
 def make_output_dir(args):
+    base = f"{args.task}_seq{args.seq_len}_ov{int(args.overlap*100)}"
+
     if args.split == "random":
-        exp_name = f"{args.task}_seq{args.seq_len}_ov{int(args.overlap*100)}_{args.split}_{args.model}"
+        exp_name = f"{base}_random_{args.model}"
+
+    elif args.split == "oneout":
+        if args.task == "node":
+            # one_env_out
+            exp_name = f"{base}_oneout_env{args.test_env}_{args.model}"
+        elif args.task == "env":
+            # one_node_out
+            exp_name = f"{base}_oneout_node{args.test_node}_{args.model}"
+        else:
+            raise ValueError(f"Unknown task: {args.task}")
+
     else:
-        exp_name = f"{args.task}_seq{args.seq_len}_ov{int(args.overlap*100)}_{args.split}_env{args.test_env}_{args.model}"
+        raise ValueError(f"Unknown split: {args.split}")
 
     output_dir = os.path.join("outputs", exp_name)
     os.makedirs(output_dir, exist_ok=True)
     return output_dir
-
 
 def save_results(output_dir, args, train_history, test_metrics, y_true, y_pred, cm):
     train_loss_list, train_acc_list, test_loss_list, test_acc_list = train_history
@@ -129,7 +142,13 @@ def save_results(output_dir, args, train_history, test_metrics, y_true, y_pred, 
         "seq_len": args.seq_len,
         "overlap": args.overlap,
         "split": args.split,
-        "test_env": args.test_env,
+
+        "oneout_type": "one_env_out" if args.task == "node" and args.split == "oneout"
+                   else "one_node_out" if args.task == "env" and args.split == "oneout"
+                   else None,
+        "test_env": args.test_env if args.task == "node" and args.split == "oneout" else None,
+        "test_node": args.test_node if args.task == "env" and args.split == "oneout" else None,
+    
         "model": args.model,
         "epochs": args.epochs,
         "batch_size": args.batch_size,
@@ -204,21 +223,25 @@ def main():
     print("Using device:", device)
 
     # 1. load data
-    X, y, env_ids, data_path = load_processed_data(args.task, args.seq_len, args.overlap)
+    X, y, env_ids,node_ids, data_path = load_processed_data(args.task, args.seq_len, args.overlap)
     print(f"Loaded: {data_path}")
     print("Original X shape:", X.shape)
     print("Original y shape:", y.shape)
 
     # 2. split
-    X_train, X_test, y_train, y_test, env_train, env_test = split_dataset(
-        X, y, env_ids,
+    X_train, X_test, y_train, y_test, env_train, env_test,node_train,node_test = split_dataset(
+        X, y, env_ids,node_ids,
+        task=args.task,
         split_strategy=args.split,
         test_size=0.25,
         random_state=args.random_state,
-        test_env=args.test_env
+        test_env=args.test_env,
+        test_node=args.test_node,
     )
     print("Unique train envs:", np.unique(env_train))
     print("Unique test envs :", np.unique(env_test))
+    print("Unique train nodes:", np.unique(node_train))
+    print("Unique test nodes :", np.unique(node_test))
 
     print("Train:", X_train.shape, y_train.shape)
     print("Test :", X_test.shape, y_test.shape)
@@ -255,9 +278,9 @@ def main():
 
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
         optimizer,
-        mode="min",        # 監控 loss，越小越好
-        factor=0.5,        # lr 乘上 0.5
-        patience=3,        # 連續 3 個 epoch 沒改善就降
+        mode="min",        # we want to minimize test loss
+        factor=0.5,        # if no improvement, lr = lr * factor
+        patience=3,        # if loss doesn't improve for 3 epochs, reduce lr
         min_lr=1e-6
     )
     # 6. training loop
@@ -271,7 +294,7 @@ def main():
     best_model_path = os.path.join(output_dir, "best_model.pt")
     best_test_loss = float("inf") #for early stopping
     early_stop_counter = 0
-    early_stop_patience = 8
+    early_stop_patience = 20
     for epoch in range(args.epochs):
         train_loss, train_acc = train_one_epoch(model, train_loader, criterion, optimizer, device)
         test_loss, test_acc, test_f1, _, _ = evaluate(model, test_loader, criterion, device)
@@ -288,7 +311,7 @@ def main():
             f"Test Loss: {test_loss:.4f}, Test Acc: {test_acc:.4f}, Test F1: {test_f1:.4f}"
         )
 
-        # 存 best model：建議看 test_loss
+        # save best model based on test loss for early stopping, but also track best test acc for final reporting
         if test_loss < best_test_loss:
             best_test_loss = test_loss
             early_stop_counter = 0

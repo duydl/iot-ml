@@ -22,7 +22,7 @@ DEVICE_TO_LABEL = {
 def create_dataset(task="node", seq_len=100, overlap=0.5):
     stride = int(seq_len * (1 - overlap))
 
-    X, y, env_ids = [], [], []
+    X, y, env_ids,node_ids = [], [], [],[]
 
     for env_id, file in enumerate(FILES):
         df = pd.read_csv(file)
@@ -58,12 +58,13 @@ def create_dataset(task="node", seq_len=100, overlap=0.5):
                 X.append(seq)
                 y.append(label)
                 env_ids.append(env_id)
+                node_ids.append(node_label)
 
     X = np.array(X, dtype=np.float32)
     y = np.array(y, dtype=np.int64)
     env_ids = np.array(env_ids, dtype=np.int64)
-
-    return X, y, env_ids
+    node_ids = np.array(node_ids, dtype=np.int64)
+    return X, y, env_ids,node_ids
 
 
 def main():
@@ -73,7 +74,7 @@ def main():
     parser.add_argument("--overlap", type=float, required=True)
     args = parser.parse_args()
 
-    X, y, env_ids = create_dataset(
+    X, y, env_ids ,node_ids= create_dataset(
         task=args.task,
         seq_len=args.seq_len,
         overlap=args.overlap
@@ -82,12 +83,13 @@ def main():
     os.makedirs("data/processed", exist_ok=True)
     out_path = f"data/processed/{args.task}_seq{args.seq_len}_ov{int(args.overlap*100)}.npz"
 
-    np.savez(out_path, X=X, y=y, env_ids=env_ids)
+    np.savez(out_path, X=X, y=y, env_ids=env_ids,node_ids=node_ids)
 
     print("Saved to:", out_path)
     print("X shape:", X.shape)
     print("y shape:", y.shape)
     print("env_ids shape:", env_ids.shape)
+    print("node_ids shape:", node_ids.shape)
 
 
 if __name__ == "__main__":

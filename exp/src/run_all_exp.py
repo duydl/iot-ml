@@ -4,12 +4,13 @@ import sys
 
 TASKS = ["node", "env"]
 MODELS = ["cnn", "resnet"]
-SPLITS = ["random", "leave_one_env_out"]
+SPLITS = ["oneout"]
+#SPLITS = ["random", "oneout"]
 SEQ_LENS = [100, 500, 1000]
 OVERLAPS = [0.4, 0.5]
 
-# assume we always leave out env 4 for testing in leave_one_env_out split
-DEFAULT_TEST_ENV = 4
+DEFAULT_TEST_ENV = 3
+DEFAULT_TEST_NODE = 1
 
 def main():
     exp_id = 1
@@ -30,8 +31,11 @@ def main():
             "--lr", "0.0001"
         ]
 
-        if split == "leave_one_env_out":
-            cmd.extend(["--test_env", str(DEFAULT_TEST_ENV)])
+        if split == "oneout":
+            if task == "node":
+                cmd.extend(["--test_env", str(DEFAULT_TEST_ENV)])
+            elif task == "env":
+                cmd.extend(["--test_node", str(DEFAULT_TEST_NODE)]) 
 
         print(f"\n===== Running experiment {exp_id}/{total} =====")
         print(" ".join(cmd))

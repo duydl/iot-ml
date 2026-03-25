@@ -36,7 +36,7 @@ class ResNet1D(nn.Module):
             nn.ReLU(),
             nn.MaxPool1d(2),
 
-            ResidualBlock1D(32),  # ⭐ 新增 residual
+            ResidualBlock1D(32),
             nn.Conv1d(32, 64, kernel_size=5, padding=2),
             nn.BatchNorm1d(64),
             nn.ReLU(),

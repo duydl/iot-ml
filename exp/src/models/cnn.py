@@ -19,7 +19,6 @@ class CNN1D(nn.Module):
             nn.BatchNorm1d(128),
             nn.ReLU(),
 
-            # ⭐ 關鍵：固定輸出長度
             nn.AdaptiveAvgPool1d(1)
         )
 
