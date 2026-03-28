@@ -1,0 +1,16 @@
+{
+    "task": "env",
+    "seq_len": 500,
+    "overlap": 0.5,
+    "split": "random",
+    "test_env": null,
+    "model": "resnet",
+    "epochs": 100,
+    "batch_size": 64,
+    "learning_rate": 0.0001,
+    "final_train_loss": 0.20403551730304853,
+    "final_train_acc": 0.9621125143513203,
+    "final_test_loss": 0.19323576244291982,
+    "final_test_acc": 0.9690721649484536,
+    "final_test_f1_macro": 0.9660067128329903
+}

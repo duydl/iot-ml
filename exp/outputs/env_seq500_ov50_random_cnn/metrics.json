@@ -1,0 +1,16 @@
+{
+    "task": "env",
+    "seq_len": 500,
+    "overlap": 0.5,
+    "split": "random",
+    "test_env": null,
+    "model": "cnn",
+    "epochs": 100,
+    "batch_size": 64,
+    "learning_rate": 0.0001,
+    "final_train_loss": 0.5094288051402117,
+    "final_train_acc": 0.8140068886337543,
+    "final_test_loss": 0.41962556863568495,
+    "final_test_acc": 0.8556701030927835,
+    "final_test_f1_macro": 0.8533716768467345
+}
