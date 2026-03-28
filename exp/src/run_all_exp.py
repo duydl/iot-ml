@@ -4,8 +4,7 @@ import sys
 
 TASKS = ["node", "env"]
 MODELS = ["cnn", "resnet"]
-SPLITS = ["oneout"]
-#SPLITS = ["random", "oneout"]
+SPLITS = ["random","oneout"]
 SEQ_LENS = [100, 500, 1000]
 OVERLAPS = [0.4, 0.5]
 

@@ -13,7 +13,7 @@
     1.1 load each environment CSV, sort by timestamp, and process each device stream separately. 
     1.2 converts RSSI to `rssi_diff`, applies per-device min-max normalization
     1.3 generates overlapping windows (`seq_len`, `overlap`). 
-    1.4 Finally, it assigns labels (`node` or `env`) and saves `X`, `y`, and `env_ids` into `data/processed/*.npz`.
+    1.4 Finally, it assigns labels (`node` or `env`) and saves `X`, `y`, and `env_ids`,`node_ids` into `data/processed/*.npz`.
 2. Run experiments (single run or batch)
 3. Summarize and visualize results
 
@@ -51,24 +51,6 @@ python src/run_experiment.py \
 	--lr 1e-4
 ```
 
-### 3) Leave-one-env-out example (test on env4)
-
-```bash
-python src/run_leaveone_experiment.py \
-	--task node \
-	--seq_len 100 \
-	--overlap 0.5 \
-	--split leave_one_env_out \
-	--test_env 4 \
-	--model resnet \
-	--epochs 100
-```
-### 4) Summarize all results
-
-```bash
-python src/summary.py
-```
-
 ## Output Files (per experiment)
 
 Each experiment folder under `outputs/` usually includes:
@@ -82,7 +64,7 @@ Each experiment folder under `outputs/` usually includes:
 
 ## Experiments
 - 2 models: `cnn`, `resnet`
-- 2 splits: `random`, `leave_one_env_out`
+- 2 splits: `random`, `oneout`
 - 2 overlaps: `0.4`, `0.5`
 - 3 sequence lengths: `100`, `500`, `1000`
 - 2 tasks (objects): `node`, `env`
@@ -92,5 +74,5 @@ Total:`2 × 2 × 2 × 3 × 2 = 48` experiments.
 
 - `task=node`: classify node ID (`RIOT-BLE-0` to `RIOT-BLE-3`)
 - `task=env`: classify environment (`e0` to `e4`)
-- `split=leave_one_env_out` is only used for node recognition; compared with random split, accuracy is much lower and training often does not converge.
+- `split=oneout`: for node recognition, use `env3` as the test set and the other environments as the training set; for environment recognition, use `node1` as the test set and the other nodes as the training set.
 - `splitbytime` performs slightly worse than random split; with the same configuration (`node_seq100_ov50_random_cnn`), accuracy is `0.69` for split-by-time vs `0.77` for random split.
