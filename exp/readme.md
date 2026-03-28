@@ -26,7 +26,7 @@
 - `src/run_all_exp.py`: run batch experiments
 - `src/summary.py`: aggregate metrics and generate plots
 - `src/splitbytime.ipynb`: split train/test based on time instead of random splitting
-
+- `outputs/results`: includes summary tables and visualization figures across all experiments.  
 ## Example Commands
 
 Run from the `exp/` directory.
@@ -71,7 +71,6 @@ Each experiment folder under `outputs/` usually includes:
 
 Total:`2 × 2 × 2 × 3 × 2 = 48` experiments.
 ## Notes
-
 - `task=node`: classify node ID (`RIOT-BLE-0` to `RIOT-BLE-3`)
 - `task=env`: classify environment (`e0` to `e4`)
 - `split=oneout`: for node recognition, use `env3` as the test set and the other environments as the training set; for environment recognition, use `node1` as the test set and the other nodes as the training set.
