@@ -1,0 +1,19 @@
+{
+    "feature": "latency",
+    "task": "node",
+    "seq_len": 500,
+    "overlap": 0.5,
+    "split": "random",
+    "oneout_type": null,
+    "test_env": null,
+    "test_node": null,
+    "model": "cnn",
+    "epochs": 200,
+    "batch_size": 64,
+    "learning_rate": 0.0001,
+    "final_train_loss": 0.8516189412189269,
+    "final_train_acc": 0.6314580941446614,
+    "final_test_loss": 0.8001003861427307,
+    "final_test_acc": 0.6804123711340206,
+    "final_test_f1_macro": 0.6834875900951647
+}

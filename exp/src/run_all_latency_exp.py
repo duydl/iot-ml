@@ -4,7 +4,7 @@ import subprocess
 import sys
 import os
 
-TASKS = ["node", "env"]
+TASKS = ["node"]
 MODELS = ["cnn", "resnet"]
 SPLITS = ["random", "oneout"]
 SEQ_LENS = [100, 500, 1000]
@@ -27,7 +27,7 @@ def main():
             "--overlap", str(overlap),
             "--split", split,
             "--model", model,
-            "--epochs", "50", # reduced from 100 for latency initial runs
+            "--epochs", "200",
             "--batch_size", "64",
             "--lr", "0.0001"
         ]

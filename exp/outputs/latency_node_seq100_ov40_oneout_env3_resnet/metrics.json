@@ -1,0 +1,19 @@
+{
+    "feature": "latency",
+    "task": "node",
+    "seq_len": 100,
+    "overlap": 0.4,
+    "split": "oneout",
+    "oneout_type": "one_env_out",
+    "test_env": 3,
+    "test_node": null,
+    "model": "resnet",
+    "epochs": 200,
+    "batch_size": 64,
+    "learning_rate": 0.0001,
+    "final_train_loss": 0.46110074337195694,
+    "final_train_acc": 0.782757711573952,
+    "final_test_loss": 2.4014779092535594,
+    "final_test_acc": 0.0,
+    "final_test_f1_macro": 0.0
+}
