@@ -1,3 +1,4 @@
+# src/run_latency_experiment.py
 import os
 import json
 import argparse
@@ -34,17 +35,17 @@ def parse_args():
 
 def load_processed_data(task, seq_len, overlap):
     overlap_str = int(overlap * 100)
-    file_path = f"data/processed/{task}_seq{seq_len}_ov{overlap_str}.npz"
+    file_path = f"data/processed/latency_{task}_seq{seq_len}_ov{overlap_str}.npz"
 
     if not os.path.exists(file_path):
-        raise FileNotFoundError(f"Processed file not found: {file_path}")
+        raise FileNotFoundError(f"Processed latency file not found: {file_path}")
 
     data = np.load(file_path)
     X = data["X"]
     y = data["y"]
     env_ids = data["env_ids"]
     node_ids = data["node_ids"]
-    return X, y, env_ids,node_ids, file_path
+    return X, y, env_ids, node_ids, file_path
 
 
 def build_model(model_name, num_classes):
@@ -110,17 +111,15 @@ def evaluate(model, loader, criterion, device):
 
 
 def make_output_dir(args):
-    base = f"{args.task}_seq{args.seq_len}_ov{int(args.overlap*100)}"
+    base = f"latency_{args.task}_seq{args.seq_len}_ov{int(args.overlap*100)}"
 
     if args.split == "random":
         exp_name = f"{base}_random_{args.model}"
 
     elif args.split == "oneout":
         if args.task == "node":
-            # one_env_out
             exp_name = f"{base}_oneout_env{args.test_env}_{args.model}"
         elif args.task == "env":
-            # one_node_out
             exp_name = f"{base}_oneout_node{args.test_node}_{args.model}"
         else:
             raise ValueError(f"Unknown task: {args.task}")
@@ -137,6 +136,7 @@ def save_results(output_dir, args, train_history, test_metrics, y_true, y_pred, 
     test_loss, test_acc, test_f1 = test_metrics
 
     metrics = {
+        "feature": "latency",
         "task": args.task,
         "seq_len": args.seq_len,
         "overlap": args.overlap,
@@ -176,14 +176,14 @@ def main():
     print("Using device:", device)
 
     # 1. load data
-    X, y, env_ids,node_ids, data_path = load_processed_data(args.task, args.seq_len, args.overlap)
+    X, y, env_ids, node_ids, data_path = load_processed_data(args.task, args.seq_len, args.overlap)
     print(f"Loaded: {data_path}")
     print("Original X shape:", X.shape)
     print("Original y shape:", y.shape)
 
     # 2. split
-    X_train, X_test, y_train, y_test, env_train, env_test,node_train,node_test = split_dataset(
-        X, y, env_ids,node_ids,
+    X_train, X_test, y_train, y_test, env_train, env_test, node_train, node_test = split_dataset(
+        X, y, env_ids, node_ids,
         task=args.task,
         split_strategy=args.split,
         test_size=0.25,
@@ -191,10 +191,6 @@ def main():
         test_env=args.test_env,
         test_node=args.test_node,
     )
-    print("Unique train envs:", np.unique(env_train))
-    print("Unique test envs :", np.unique(env_test))
-    print("Unique train nodes:", np.unique(node_train))
-    print("Unique test nodes :", np.unique(node_test))
 
     print("Train:", X_train.shape, y_train.shape)
     print("Test :", X_test.shape, y_test.shape)
@@ -231,11 +227,12 @@ def main():
 
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
         optimizer,
-        mode="min",        # we want to minimize test loss
-        factor=0.5,        # if no improvement, lr = lr * factor
-        patience=3,        # if loss doesn't improve for 3 epochs, reduce lr
+        mode="min",
+        factor=0.5,
+        patience=3,
         min_lr=1e-6
     )
+
     # 6. training loop
     train_losses = []
     train_accs = []
@@ -245,9 +242,10 @@ def main():
     best_test_acc = -1.0
     output_dir = make_output_dir(args)
     best_model_path = os.path.join(output_dir, "best_model.pt")
-    best_test_loss = float("inf") #for early stopping
+    best_test_loss = float("inf")
     early_stop_counter = 0
     early_stop_patience = 20
+
     for epoch in range(args.epochs):
         train_loss, train_acc = train_one_epoch(model, train_loader, criterion, optimizer, device)
         test_loss, test_acc, test_f1, _, _ = evaluate(model, test_loader, criterion, device)
@@ -256,6 +254,7 @@ def main():
         train_accs.append(train_acc)
         test_losses.append(test_loss)
         test_accs.append(test_acc)
+        
         current_lr = optimizer.param_groups[0]["lr"]
         print(
             f"Epoch [{epoch+1}/{args.epochs}] ",
@@ -264,7 +263,6 @@ def main():
             f"Test Loss: {test_loss:.4f}, Test Acc: {test_acc:.4f}, Test F1: {test_f1:.4f}"
         )
 
-        # save best model based on test loss for early stopping, but also track best test acc for final reporting
         if test_loss < best_test_loss:
             best_test_loss = test_loss
             early_stop_counter = 0
@@ -278,6 +276,7 @@ def main():
         if early_stop_counter >= early_stop_patience:
             print(f"Early stopping triggered at epoch {epoch+1}")
             break
+
     # 7. final evaluation
     if os.path.exists(best_model_path):
         model.load_state_dict(torch.load(best_model_path, map_location=device))
@@ -293,12 +292,10 @@ def main():
         y_pred=y_pred,
         cm=cm
     )
-    # save plots
+    
     plot_training_curves(train_losses, test_losses, train_accs, test_accs, output_dir)
     plot_confusion_matrix(cm, output_dir)
     print("\nFinal Test Accuracy:", test_acc)
-    print("Final Test F1 Macro:", test_f1)
-    print("Confusion Matrix:\n", cm)
     print(f"Results saved to: {output_dir}")
 
 
