@@ -1,5 +1,0 @@
-gmake: Entering directory '/Users/yulin/Desktop/iot-ml/iot/rx'
-/Users/yulin/Desktop/iot-ml/RIOT/dist/tools/pyterm/pyterm -p "/dev/usbmodem101" -b "115200" -ln "/tmp/pyterm-yulin" -rn "2026-03-07_14.06.58-iot_rx-adafruit-feather-nrf52840-sense"  
-2026-03-07 14:06:58,182 # Connect to serial port /dev/usbmodem101
-2026-03-07 14:06:58,182 # could not open port /dev/usbmodem101: [Errno 2] No such file or directory: '/dev/usbmodem101'
-gmake: Leaving directory '/Users/yulin/Desktop/iot-ml/iot/rx'
