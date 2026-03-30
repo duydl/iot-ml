@@ -75,5 +75,3 @@ Total:`2 × 2 × 2 × 3 × 2 = 48` experiments.
 - `task=env`: classify environment (`e0` to `e4`)
 - `split=oneout`: for node recognition, use `env3` as the test set and the other environments as the training set; for environment recognition, use `node1` as the test set and the other nodes as the training set.
 - `splitbytime` performs slightly worse than random split; with the same configuration (`node_seq100_ov50_random_cnn`), accuracy is `0.69` for split-by-time vs `0.77` for random split.
-
-random split t1 t2-> train: t1, test: t2
