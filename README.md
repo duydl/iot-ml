@@ -1,40 +1,32 @@
-# IoT / ML Project
+# RSSI-based Localization & Environmental Classification
 
-## IoT Setup
+This project implements a system for collecting and classifying Bluetooth Low Energy (BLE) signal strength (RSSI) data. It consists of an IoT data collection module and a Machine Learning classification module.
 
-1. **Build and flash TX/RX** (two boards):
+## Project Structure
+
+- **[🛰️ iot/](iot/)**: RIOT OS firmware for TX/RX nodes and data collection scripts.
+- **[🧠 ml/](ml/)**: Data preprocessing, deep learning models (CNN, ResNet), and experimental analysis.
+- **[📊 report/](report/)**: Project documentation and LaTeX report materials.
+
+## Getting Started
+
+### 1. Requirements
+Ensure you have the following installed:
+- **RIOT OS dependencies** (for IoT module).
+- **[uv](https://github.com/astral-sh/uv)** (for ML module).
+
+### 2. Environment Setup
+Initialize the Python environment and install all dependencies (ML and IoT tools):
 ```bash
-make -C iot/tx flash
-make -C iot/rx flash
+uv sync --all-extras
 ```
 
-2. **Log RX CSV from `_Project` root** (creates `data/<timestamp>/rx.csv` using pyterm timestamps):
-```bash
-./iot/log_rx.sh
-```
-CSV header:
-```
-ts,seq,temp_val,temp_scale,hum_val,hum_scale,press_val,press_scale,rssi
-```
-`ts` is the pyterm timestamp prefix. Set `PORT=/dev/ttyACM1` if needed.
+### 3. Detailed Instructions
+Please refer to the subdirectory-specific documentation for detailed setup and usage:
+- **[IoT Setup and Data Collection](iot/README.md)**
+- **[ML Training and Evaluation](ml/README.md)**
 
-## ML Setup
-
-1. **Install uv**:
-   [Follow the instructions here](https://github.com/astral-sh/uv) or install via pip:
-   ```bash
-   pip install uv
-   ```
-
-2. **Install Dependencies**:
-   Run the following command in the project root (`_Project/`):
-
-```bash
-uv sync
-```
-
-1. **Run Training**:
-   Run the training script from the project root:
-```bash
-uv run python ml/train.py
-```
+## Workflow Overview
+1. **IoT**: Flash nodes and collect RSSI data in various environments.
+2. **ML**: Preprocess data into windows and train models to recognize either the transmitter node or the physical environment.
+3. **Report**: Analyze results and document findings.
