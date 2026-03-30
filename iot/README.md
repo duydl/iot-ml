@@ -32,5 +32,21 @@ ts,device,seq,temp_val,temp_scale,hum_val,hum_scale,press_val,press_scale,rssi
 - Default port: `/dev/ttyACM0`. Use `PORT=/dev/ttyACM1` to override.
 - Default baud: `115200`.
 
+## Live Dashboard
+
+To view the real-time transmission frequency, connection status, and RSSI during data collection, you can use the web-based dashboard located in the `iot/data/` directory. 
+
+Because the dashboard fetches local CSV files dynamically, it must be served via a local web server (opening the HTML file directly in the browser won't work due to CORS restrictions).
+
+1. Navigate to the `data` directory:
+```bash
+cd iot/data
+   ```
+2. Start a simple Python HTTP server:
+```bash
+python3 -m http.server 8000
+```
+3. Open your web browser and navigate to [http://localhost:8000/dashboard.html](http://localhost:8000/dashboard.html).
+
 ## More Information
 - [IOT_COMMUNICATION.md](IOT_COMMUNICATION.md): Detailed explanation of the NimBLE stack, BLE roles, and GATT structure.

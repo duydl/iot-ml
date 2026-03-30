@@ -6,11 +6,14 @@ The ability to uniquely identify IoT sensor nodes and their deployment environme
 
 This project investigates whether these fluctuations can be used to classify (1) the deployment environment and (2) the individual sensor node. We deploy a BLE-based sensor network across five outdoor environments and apply two machine learning models (CNN and ResNet) to perform classification.
 
+> [!NOTE]
+> The full written project report is available as [**`report.pdf`**](report.pdf) in the repository root.
+
 ## Project Structure
 
-- **[🛰️ iot/](iot/)**: RIOT OS firmware for TX/RX nodes and data collection scripts.
-- **[🧠 ml/](ml/)**: Data preprocessing, deep learning models (CNN, ResNet), and experimental analysis.
-- **[📊 report/](report/)**: Project documentation and LaTeX report materials.
+- **[iot/](iot/)**: RIOT OS firmware for TX/RX nodes and data collection scripts.
+- **[ml/](ml/)**: Data preprocessing, deep learning models (CNN, ResNet), and experimental analysis.
+- **[report/](report/)**: Project documentation and LaTeX report materials.
 
 ## Getting Started
 
