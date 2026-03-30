@@ -13,6 +13,7 @@ This project investigates whether these fluctuations can be used to classify (1)
 
 - **[iot/](iot/)**: RIOT OS firmware for TX/RX nodes and data collection scripts.
 - **[ml/](ml/)**: Data preprocessing, deep learning models (CNN, ResNet), and experimental analysis.
+  > **Note:** The required data directories for the project submission (`environment/` and `node/`) correspond to `ml/data/raw-env` and `ml/data/raw-node`.
 - **[report/](report/)**: Project documentation and LaTeX report materials.
 
 ## Getting Started
