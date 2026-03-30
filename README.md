@@ -1,6 +1,10 @@
-# RSSI-based Localization & Environmental Classification
+# Identifying Deployment Environments and Sensor Nodes Using Link Quality Fluctuations
 
-This project implements a system for collecting and classifying Bluetooth Low Energy (BLE) signal strength (RSSI) data. It consists of an IoT data collection module and a Machine Learning classification module.
+*Team Members: Duy Do Le (5337109), Ngoc Thao Trang Ho (5316723), Timon Althaus (5280076), Yu-Ching Lai (5328824), Yu Ling Zhong (532226)*
+
+The ability to uniquely identify IoT sensor nodes and their deployment environments is a challenging yet valuable problem in wireless sensing. Due to manufacturing imperfections, individual devices exhibit microscopic differences in their radio characteristics, which can be observed through link quality fluctuations such as RSSI (Received Signal Strength Indicator).
+
+This project investigates whether these fluctuations can be used to classify (1) the deployment environment and (2) the individual sensor node. We deploy a BLE-based sensor network across five outdoor environments and apply two machine learning models (CNN and ResNet) to perform classification.
 
 ## Project Structure
 
